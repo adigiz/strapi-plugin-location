@@ -103,18 +103,16 @@ const LocationInput = ({ value, onChange, name, attribute }) => {
           handleSetLocation={handleSetLocation}
         />
         <Grid.Item col={12}>
-          <Button onClick={() => setIsModalVisible((prev) => !prev)}>
-            Open map
-          </Button>
-          {isModalVisible && (
-            <Modal.Root
-              // onClose={() => setIsModalVisible((prev) => !prev)}
-              // labelledBy="title"
-            >
+            <Modal.Root>
+              <Modal.Trigger>
+                 <Button>
+                    Open Map View
+                </Button>
+                </Modal.Trigger>
               <Modal.Content>
               <Modal.Header>
                 <Modal.Title>
-                  Title
+                  Map View
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -149,13 +147,14 @@ const LocationInput = ({ value, onChange, name, attribute }) => {
                 </Box>
               </Modal.Body>
               <Modal.Footer>
-                <Button onClick={() => setIsModalVisible((prev) => !prev)}>
+                <Modal.Close>
+                <Button >
                       Ok
                     </Button>
+                  </Modal.Close>
               </Modal.Footer>
               </Modal.Content>
             </Modal.Root>
-          )}
         </Grid.Item>
       </Grid.Root>
     </Box>
