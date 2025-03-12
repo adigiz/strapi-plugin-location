@@ -1,4 +1,4 @@
-import { Strapi } from "@strapi/strapi";
+import { Core as StrapiCore } from "@strapi/strapi";
 import knex from "knex";
 import pluginId from "../admin/src/pluginId";
 
@@ -23,7 +23,7 @@ const createPgExtension = async (db) => {
   return true;
 };
 
-export default async ({ strapi }: { strapi: Strapi }) => {
+export default async ({ strapi }: { strapi: StrapiCore.Strapi }) => {
   strapi["location-plugin"] = {
     enabled: true,
   };
