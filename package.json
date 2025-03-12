@@ -23,7 +23,8 @@
     "Dominik Juriga <dominik.juriga@notum.cz> (https://notum.cz/en/strapi)"
   ],
   "scripts": {
-    "develop": "NODE_ENV=development tsc -p tsconfig.server.json -w"
+    "develop": "NODE_ENV=development tsc -p tsconfig.server.json -w",
+    "postinstall": "tsc -p tsconfig.server.json"
   },
   "dependencies": {
     "@notum-cz/strapi-plugin-location": "^1.3.2",
