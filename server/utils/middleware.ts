@@ -1,4 +1,4 @@
-import { Strapi } from "@strapi/strapi";
+import { Core as StrapiCore } from "@strapi/strapi";
 import _ from "lodash";
 import { getLocationQueryParams } from "./locationHelpers";
 
@@ -12,7 +12,7 @@ type LogicalQuery =
 type LocationQueryCombined = LocationQuery | LogicalQuery;
 
 const locaitonServiceUid = "plugin::location-plugin.locationServices";
-const createFilterMiddleware = (strapi: Strapi) => {
+const createFilterMiddleware = (strapi: StrapiCore.Strapi) => {
   const db = strapi.db.connection;
   const modelsWithLocation =
     strapi.services[locaitonServiceUid].getModelsWithLocation();
@@ -34,7 +34,7 @@ const createFilterMiddleware = (strapi: Strapi) => {
       model.collectionName === _.snakeCase(collectionType);
     const collectionModel = !isComponentQuery
       ? modelsWithLocation.find((model) => modelCondition(model))
-      : strapi.db.config.models.find(
+      : Object.values(strapi.contentTypes).find(
           //@ts-ignore
           (model) => model.collectionName === _.snakeCase(collectionType)
         );
