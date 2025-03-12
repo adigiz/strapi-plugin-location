@@ -1,4 +1,4 @@
-import { GridItem, NumberInput } from "@strapi/design-system";
+import { Grid, NumberInput } from "@strapi/design-system";
 import React from "react";
 const LocationInputForm = ({
   lat,
@@ -11,7 +11,7 @@ const LocationInputForm = ({
 }) => {
   return (
     <>
-      <GridItem col={6}>
+      <Grid.Item col={6}>
         <NumberInput
           label="Lat"
           value={lat ? lat : 0}
@@ -19,8 +19,8 @@ const LocationInputForm = ({
             handleSetLocation([newValue, lng])
           }
         />
-      </GridItem>
-      <GridItem col={6}>
+      </Grid.Item>
+      <Grid.Item col={6}>
         <NumberInput
           label="Lng"
           value={lng ? lng : 0}
@@ -28,7 +28,7 @@ const LocationInputForm = ({
             handleSetLocation([lat, newValue])
           }
         />
-      </GridItem>
+      </Grid.Item>
     </>
   );
 };

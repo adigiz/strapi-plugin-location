@@ -24,10 +24,10 @@
   ],
   "scripts": {
     "develop": "NODE_ENV=development tsc -p tsconfig.server.json -w",
-    "postinstall": "npm i --legacy-peer-deps && tsc -p tsconfig.server.json"
+    "postinstall": "tsc -p tsconfig.server.json"
   },
   "dependencies": {
-    "@strapi/design-system": "^1.19.0",
+    "@strapi/design-system": "2.0.0-rc.18",
     "@strapi/icons": "^1.19.0",
     "leaflet": "^1.9.4",
     "prop-types": "^15.7.2",

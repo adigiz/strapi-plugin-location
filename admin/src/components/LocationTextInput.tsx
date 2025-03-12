@@ -1,5 +1,5 @@
 
-import { Button, Grid, GridItem, TextInput } from "@strapi/design-system";
+import { Button, Grid, TextInput } from "@strapi/design-system";
 import React, { Dispatch, SetStateAction, useState } from "react";
 
 export default function LocationTextInput({
@@ -35,8 +35,8 @@ export default function LocationTextInput({
   };
 
   return (
-    <Grid gap={5} style={{ padding: "16px 0" }}>
-      <GridItem col={10}>
+    <Grid.Root gridCols={12} gap={5} style={{ padding: "16px 0" }}>
+      <Grid.Item col={10}>
         <TextInput
           placeholder="insert your address"
           label="Address"
@@ -47,8 +47,8 @@ export default function LocationTextInput({
           }}
           {...(errorMsg && { error: errorMsg })}
         />
-      </GridItem>
-      <GridItem
+      </Grid.Item>
+      <Grid.Item
         col={2}
         style={{
           display: "flex",
@@ -66,7 +66,7 @@ export default function LocationTextInput({
         >
           Send
         </Button>
-      </GridItem>
-    </Grid>
+      </Grid.Item>
+    </Grid.Root>
   );
 }

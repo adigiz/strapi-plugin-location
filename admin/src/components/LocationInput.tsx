@@ -8,11 +8,7 @@ import {
   Box,
   Button,
   Grid,
-  GridItem,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  ModalLayout,
+  Modal,
   Typography,
 } from "@strapi/design-system";
 import L from "leaflet";
@@ -100,39 +96,35 @@ const LocationInput = ({ value, onChange, name, attribute }) => {
       <Typography fontWeight="bold" variant="pi">
         {name}
       </Typography>
-      <Grid gap={5}>
+      <Grid.Root gap={5}>
         <LocationInputForm
           lat={lat}
           lng={lng}
           handleSetLocation={handleSetLocation}
         />
-        <GridItem col={12}>
+        <Grid.Item col={12}>
           <Button onClick={() => setIsModalVisible((prev) => !prev)}>
             Open map
           </Button>
           {isModalVisible && (
-            <ModalLayout
-              onClose={() => setIsModalVisible((prev) => !prev)}
-              labelledBy="title"
+            <Modal.Root
+              // onClose={() => setIsModalVisible((prev) => !prev)}
+              // labelledBy="title"
             >
-              <ModalHeader>
-                <Typography
-                  fontWeight="bold"
-                  textColor="neutral800"
-                  as="h2"
-                  id="title"
-                >
+              <Modal.Content>
+              <Modal.Header>
+                <Modal.Title>
                   Title
-                </Typography>
-              </ModalHeader>
-              <ModalBody>
-                <Grid gap={5} className="pb-2">
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Grid.Root gap={5} className="pb-2">
                   <LocationInputForm
                     lat={lat}
                     lng={lng}
                     handleSetLocation={handleSetLocation}
                   />
-                </Grid>
+                </Grid.Root>
                 <LocationTextInput handleSetLocation={handleSetLocation} />
                 <Box paddingTop={6}>
                   <MapContainer
@@ -155,20 +147,17 @@ const LocationInput = ({ value, onChange, name, attribute }) => {
                     <FlyMapTo />
                   </MapContainer>
                 </Box>
-              </ModalBody>
-              <ModalFooter
-                endActions={
-                  <>
-                    <Button onClick={() => setIsModalVisible((prev) => !prev)}>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={() => setIsModalVisible((prev) => !prev)}>
                       Ok
                     </Button>
-                  </>
-                }
-              />
-            </ModalLayout>
+              </Modal.Footer>
+              </Modal.Content>
+            </Modal.Root>
           )}
-        </GridItem>
-      </Grid>
+        </Grid.Item>
+      </Grid.Root>
     </Box>
   );
 };
