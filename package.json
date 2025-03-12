@@ -27,7 +27,7 @@
     "postinstall": "tsc -p tsconfig.server.json"
   },
   "dependencies": {
-    "@strapi/design-system": "2.0.0-rc.18",
+    "@strapi/design-system": "^1.19.0",
     "@strapi/icons": "^1.19.0",
     "leaflet": "^1.9.4",
     "prop-types": "^15.7.2",
