@@ -1,3 +1,3 @@
-import { Strapi } from "@strapi/strapi";
+import { Core as StrapiCore } from "@strapi/strapi";
 
-export default async ({ strapi }: { strapi: Strapi }) => {};
+export default async ({ strapi }: { strapi: StrapiCore.Strapi }) => {};
