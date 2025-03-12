@@ -36,8 +36,8 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
-    "@strapi/strapi": "^4.25.1",
-    "@strapi/typescript-utils": "^4.24.5",
+    "@strapi/strapi": "^5.11.0",
+    "@strapi/typescript-utils": "^5.11.0",
     "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.6",
     "@types/react-dom": "^18.3.0",
@@ -50,7 +50,7 @@
     "typescript": "5.6.2"
   },
   "peerDependencies": {
-    "@strapi/strapi": "4.x"
+    "@strapi/strapi": "5.x"
   },
   "engines": {
     "node": ">=14.19.1 <=20.x.x",
