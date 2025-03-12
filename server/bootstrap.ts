@@ -16,7 +16,7 @@ export default async ({ strapi }: { strapi: StrapiCore.Strapi }) => {
 
   await Promise.all(
     modelsWithLocation.map(async (model) => {
-      const tableName = model.tableName;
+      const tableName = model.collectionName;
 
       const locationFields = strapi.services[
         locaitonServiceUid
