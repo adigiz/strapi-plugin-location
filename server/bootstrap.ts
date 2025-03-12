@@ -1,10 +1,10 @@
-import { Strapi } from "@strapi/strapi";
+import { Core as StrapiCore } from "@strapi/strapi";
 import createSubscriber from "./utils/lifecycles";
 import _ from "lodash";
 import createFilterMiddleware from "./utils/middleware";
 
 const locaitonServiceUid = "plugin::location-plugin.locationServices";
-export default async ({ strapi }: { strapi: Strapi }) => {
+export default async ({ strapi }: { strapi: StrapiCore.Strapi }) => {
   if (!strapi["location-plugin"].enabled) {
     // TODO: add information that plugin is disabled
     return;
