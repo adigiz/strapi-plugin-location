@@ -13,6 +13,9 @@
     "server/**/*.json",
     "custom.d.ts"
   ],
+  "files": [
+    "admin/src/pluginId.ts"
+  ],
 
   "exclude": [
     "node_modules/",
